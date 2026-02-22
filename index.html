@@ -1,1 +1,269 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIT Blogging Club</title>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #fafaf7;
+            color: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        /* ── Header ── */
+        header {
+            background: #8b0000;
+            color: #fff;
+            padding: 3rem 2rem 2.5rem;
+            text-align: center;
+        }
+
+        header .eyebrow {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            opacity: 0.75;
+            margin-bottom: 0.75rem;
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: normal;
+            letter-spacing: -0.01em;
+            line-height: 1.15;
+        }
+
+        header .tagline {
+            margin-top: 0.9rem;
+            font-style: italic;
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+
+        /* ── Main content ── */
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        /* ── About card ── */
+        .card {
+            background: #fff;
+            border: 1px solid #e4e0d8;
+            border-radius: 6px;
+            padding: 2rem 2.25rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #8b0000;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            line-height: 1.75;
+            color: #333;
+            font-size: 1.025rem;
+        }
+
+        /* ── Info grid ── */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 540px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .info-tile {
+            background: #fff;
+            border: 1px solid #e4e0d8;
+            border-radius: 6px;
+            padding: 1.4rem 1.6rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .info-tile .label {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 0.4rem;
+        }
+
+        .info-tile .value {
+            font-size: 1rem;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        /* ── Writing types ── */
+        .writing-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 0.75rem;
+        }
+
+        .writing-list li {
+            background: #f3ede5;
+            border: 1px solid #ddd5c8;
+            border-radius: 20px;
+            padding: 0.3rem 0.9rem;
+            font-size: 0.9rem;
+            color: #5a3e2b;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* ── CTA / Mailing list ── */
+        .cta-card {
+            background: #8b0000;
+            color: #fff;
+            border-radius: 6px;
+            padding: 2.25rem 2.5rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(139, 0, 0, 0.2);
+        }
+
+        .cta-card h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 0.6rem;
+        }
+
+        .cta-card p {
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: #8b0000;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 0.85rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.15s, color 0.15s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background: #f5e6e6;
+            transform: translateY(-1px);
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.8rem;
+            color: #aaa;
+            padding: 2rem 1rem;
+            border-top: 1px solid #e8e4dc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p class="eyebrow">Massachusetts Institute of Technology</p>
+        <h1>MIT Blogging Club</h1>
+        <p class="tagline">Write publicly. Share openly. Meet weekly.</p>
+    </header>
+
+    <main>
+
+        <!-- About -->
+        <div class="card">
+            <h2>&#9997;&#65039; About Us</h2>
+            <p>
+                Hi! We are the <strong>MIT Blogging Club</strong> — a community of writers who believe
+                in putting ideas out into the world. Whether you're a seasoned blogger or have
+                never published a word, you're welcome here. We meet on the <strong>4th floor of CSAIL</strong>
+                and keep things fueled with <strong>oranges and Diet Coke</strong>.
+            </p>
+        </div>
+
+        <!-- Logistics -->
+        <div class="info-grid">
+            <div class="info-tile">
+                <div class="label">Location</div>
+                <div class="value">4th Floor, CSAIL<br>MIT Campus</div>
+            </div>
+            <div class="info-tile">
+                <div class="label">Snacks</div>
+                <div class="value">Oranges &amp; Diet Coke<br>(usually)</div>
+            </div>
+        </div>
+
+        <!-- What we write -->
+        <div class="card">
+            <h2>&#128221; What We Write</h2>
+            <p>
+                We encourage any writing that will be viewable by the public, including:
+            </p>
+            <ul class="writing-list">
+                <li>Blog Posts</li>
+                <li>Wiki Articles</li>
+                <li>Forum Posts</li>
+                <li>Personal Essays</li>
+                <li>Technical Write-ups</li>
+                <li>Opinion Pieces</li>
+            </ul>
+        </div>
+
+        <!-- Mailing list CTA -->
+        <div class="cta-card">
+            <h2>Join Our Mailing List</h2>
+            <p>
+                Add your email below and we'll keep you posted on meetups,<br>
+                writing prompts, and snack updates.
+            </p>
+            <a class="btn" href="https://docs.google.com/forms/d/1014fEJRaS01RJjow_v5NjoLNIvtqTd4ZWWQQ2XeWh5I/viewform"
+                target="_blank" rel="noopener noreferrer">
+                Sign Up &rarr;
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        &copy; 2026 MIT Blogging Club &mdash; CSAIL, 4th Floor
+    </footer>
+
+</body>
+
+</html>
